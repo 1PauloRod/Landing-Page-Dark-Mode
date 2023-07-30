@@ -1,0 +1,263 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(124, 71, 158, 0.5);
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+header .logo{
+    font-size: 30px;
+    font-weight: 500;
+    padding-left: 1em;
+    color: white;
+}
+
+header .navigation{
+    padding-right: 5em;
+}
+
+header .navigation a{
+    position: relative;
+    margin-right: 3em;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+}
+
+header .navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+header .navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+header .navigation .btn-login{
+    background: transparent;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+header .navigation .btn-login:hover{
+    background: white;
+    color: rgba(124, 71, 158, 0.5);
+    border-color:black;
+}
+
+.wrapper{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(124, 71, 158, 0.5);
+    width: 15em;
+    height: 20em;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+
+.wrapper.active{
+    height: 23em;
+}
+
+.wrapper h2{
+    font-size: 36px;
+    text-align: center;
+   font-weight: 500;
+}
+
+.wrapper .input-box{
+    padding-top: 10px;
+    margin-left: 10%;
+}
+
+.wrapper .input-box input{
+    display: flex;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    width: 90%;
+    border-color: black;
+    transition: .5s;
+}
+
+.wrapper .btn{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.wrapper .btn:hover{
+    background: white;
+    border-color: black;
+    color: rgba(124, 71, 158, 0.5);;
+}
+
+.wrapper .login-register{
+    margin-top: 10%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.wrapper .login-register a{
+    margin-top: 10%;
+    text-align: center;
+    font-weight: 500;
+    color: black;
+}
+
+.wrapper .login-register a:hover{
+    color: white;
+}
+
+.wrapper .register-login{
+    margin-top: 10%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.wrapper .register-login a{
+    margin-top: 10%;
+    text-align: center;
+    font-weight: 500;
+    color: black;
+}
+
+.wrapper .register-login a:hover{
+    color: white;
+}
+
+.wrapper .input-box input:focus{
+    padding-top: 10px;
+}
+
+.wrapper .login-form{
+    position: absolute;
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .login-form{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .register-form{
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .register-form{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .input-box{
+    margin-left: 0;
+}
+
+.wrapper .register-form .input-box input{
+    width: 100%;
+}
+
+.dark-mode{
+    position: absolute;
+    left: 97%;
+}
+
+.btn{
+    border-radius: 50px;
+    border: 2px solid;
+    border-color: black;
+    background: white;
+    color: white;
+}
+
+.dark-mode button:hover{
+    cursor: pointer;
+    color: black;
+    background: black;
+    border-color: white;
+}
+
+.page.dark{
+    background: black;
+}
+
+body.dark{
+    transition: .5s;
+    background: rgba(0, 0, 0, .95);
+}
+
+body.dark .btn{
+    background: black;
+    color: black;
+    border-color: white;
+}
+
+body.dark .dark-mode button:hover{
+    background: white;
+    border-color: black;
+    color: white;
+}
+
+body.dark .wrapper{
+    box-shadow: 0 0 30px rgba(255, 255, 255, .5);
+}
+
+body.dark .wrapper .btn{
+    background: rgba(35, 33, 33, 0.95);
+    color: rgba(124, 71, 158, 1);
+}
+
+body.dark .wrapper .btn:hover{
+    background: white;
+    color: rgba(124, 71, 158, 1);
+}
+
+body.dark .login-form button{
+    border-color: black;
+}
+
+body.dark header{
+    border-color: white;
+}
